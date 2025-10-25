@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ql_tintucModelStoreContainer" CdmEntityContainer="ql_tintucEntities">
+    <EntitySetMapping Name="TINTUCs">
+      <EntityTypeMapping TypeName="ql_tintucModel.TINTUC">
+        <MappingFragment StoreEntitySet="TINTUC">
+          <ScalarProperty Name="IDTIN" ColumnName="IDTIN" />
+          <ScalarProperty Name="IDLOAI" ColumnName="IDLOAI" />
+          <ScalarProperty Name="TIEUDETIN" ColumnName="TIEUDETIN" />
+          <ScalarProperty Name="NOIDUNGTIN" ColumnName="NOIDUNGTIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THELOAITINs">
+      <EntityTypeMapping TypeName="ql_tintucModel.THELOAITIN">
+        <MappingFragment StoreEntitySet="THELOAITIN">
+          <ScalarProperty Name="IDLOAI" ColumnName="IDLOAI" />
+          <ScalarProperty Name="TENTHELOAI" ColumnName="TENTHELOAI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

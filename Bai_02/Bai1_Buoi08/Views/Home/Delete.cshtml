@@ -1,0 +1,82 @@
+﻿@model Bai1_Buoi08.Models.sach
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>sach</legend>
+
+    <div class="display-label">
+        <b>Mã sách:</b> 
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.masach)
+    </div>
+
+    <div class="display-label">
+        <b>Tên sách:</b> 
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tensach)
+    </div>
+
+    <div class="display-label">
+        <b>Giá bán:</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.giaban)
+    </div>
+
+    <div class="display-label">
+        <b>Mô tả: </b>  
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.mota)
+    </div>
+
+    <div class="display-label">
+        <b>Ảnh bìa:</b>  
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.anhbia)
+    </div>
+
+    <div class="display-label">
+        <b>Ngày cập nhật:</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ngaycapnhat)
+    </div>
+
+    <div class="display-label">
+        <b>Số lượng tồn:</b> 
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.soluongton)
+    </div>
+
+    <div class="display-label">
+        <b>Chủ đề:</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.chude.tenchude)
+    </div>
+
+    <div class="display-label">
+        <b>Nhà xuất bản:</b> 
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nhaxuatban.tennxh)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

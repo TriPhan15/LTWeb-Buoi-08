@@ -1,0 +1,177 @@
+﻿@using PagedList.Mvc
+@using PagedList
+@using Bai1_Buoi08.Models;
+@model IPagedList<Bai1_Buoi08.Models.sach>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        table-layout: fixed;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        text-align: left;
+        vertical-align: middle;
+        word-wrap: break-word;
+    }
+
+    th {
+        background-color: #007BFF;
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #e6f2ff;
+        cursor: pointer;
+    }
+
+    /* Ảnh trong bảng */
+    td img {
+        max-width: 80px;
+        max-height: 80px;
+        border-radius: 4px;
+        object-fit: cover;
+        display: block;
+        margin: auto;
+    }
+
+    /* Giới hạn chiều rộng cột mô tả */
+    td:nth-child(4) {
+        max-width: 250px;
+    }
+
+    /* Link trong cột hành động */
+    td:last-child a {
+        color: #007BFF;
+        text-decoration: none;
+        margin-right: 8px;
+        font-weight: 500;
+    }
+
+        td:last-child a:hover {
+            text-decoration: underline;
+        }
+
+    .pagination-container {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+        .pagination-container a {
+            margin: 0 5px;
+            padding: 6px 12px;
+            border: 1px solid #007BFF;
+            color: #007BFF;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+            .pagination-container a:hover {
+                background-color: #007BFF;
+                color: white;
+            }
+</style>
+
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)
+    }
+
+}
+<p>
+    @Html.ActionLink("Thêm mới sách", "Create")
+</p>
+<table style="border:1px solid black">
+    <tr>
+        <th>
+          Mã Sách
+        </th>
+        <th>
+          Tên sách
+        </th>
+        <th>
+            Giá bán
+        </th>
+        <th>
+     Mô Tả
+        </th>
+        <th >
+               Ảnh bìa
+        </th>
+        <th>
+            Ngày cập nhật
+        </th>
+        <th>
+          Số lượng tồn
+        </th>
+        <th>
+           Chủ đề
+        </th>
+        <th>
+Nhà xuất bản
+        </th>
+        <th>
+            Thao tác
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.masach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tensach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.giaban)
+        </td>
+        <td>
+            @Truncate(item.mota,100)
+        </td>
+        <td > 
+                <img src="@Url.Content("~/Hinh/"+item.anhbia)" />
+        </td>
+        <td>
+            @String.Format("{0:dd/MM/yyyy}", item.ngaycapnhat)
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soluongton)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.chude.tenchude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nhaxuatban.tennxh)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.masach.Trim() },null) |
+            @Html.ActionLink("Details", "Details", new { id = item.masach.Trim() }, null) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.masach.Trim() },null)
+        </td>
+    </tr>
+}
+
+</table>
+<div class="pagination-container">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page}))
+</div>

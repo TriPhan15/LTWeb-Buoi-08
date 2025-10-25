@@ -1,0 +1,41 @@
+﻿@model MvcApplication1.Models.THELOAITIN
+
+@{
+    ViewBag.Title = "ThemMoi";
+}
+
+<h2>ThemMoi</h2>
+
+
+
+    <form action="~/Home/Create" method="post">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>THELOAITIN</legend>
+            <div class="editor-label">
+                ID
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IDLOAI)
+                @Html.ValidationMessageFor(model => model.IDLOAI)
+            </div>
+            <div class="editor-label">
+              Ten the loai
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TENTHELOAI)
+                @Html.ValidationMessageFor(model => model.TENTHELOAI)
+            </div>
+
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+
+    </form>
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

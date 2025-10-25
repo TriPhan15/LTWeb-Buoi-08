@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "DanhSachDep";
+}
+@model List<Bai3.Models.tbl_Department>
+<h2>DanhSachPhòng Ban</h2>
+@*<p>
+    @Html.ActionLink("Edit", "Edit")
+</p>*@
+<div class="flex-row">
+    <div class="col-4">
+        <ul class="list-group list-group-flush">
+            @foreach (var i in Model)
+            {
+                <li class="list-group-item"><a href="@Url.Action("NhanVienTheoPhong","Home",new {id=i.DeptId})" style="text-decoration:none;color:black">@i.Name</a></li>
+
+            }
+
+        </ul>       
+    </div>
+    <div class="col-8">
+      
+    </div>
+</div>

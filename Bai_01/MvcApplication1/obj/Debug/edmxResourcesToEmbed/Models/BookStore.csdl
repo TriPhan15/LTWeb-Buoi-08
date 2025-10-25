@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ql_tintucModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TINTUC">
+    <Key>
+      <PropertyRef Name="IDTIN" />
+    </Key>
+    <Property Name="IDTIN" Type="Int32" Nullable="false" />
+    <Property Name="IDLOAI" Type="Int32" />
+    <Property Name="TIEUDETIN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NOIDUNGTIN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="THELOAITIN" Relationship="Self.FK_TINTUC_THELOAITIN" FromRole="TINTUC" ToRole="THELOAITIN" />
+  </EntityType>
+  <EntityType Name="THELOAITIN">
+    <Key>
+      <PropertyRef Name="IDLOAI" />
+    </Key>
+    <Property Name="IDLOAI" Type="Int32" Nullable="false" />
+    <Property Name="TENTHELOAI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TINTUCs" Relationship="Self.FK_TINTUC_THELOAITIN" FromRole="THELOAITIN" ToRole="TINTUC" />
+  </EntityType>
+  <Association Name="FK_TINTUC_THELOAITIN">
+    <End Role="THELOAITIN" Type="Self.THELOAITIN" Multiplicity="0..1" />
+    <End Role="TINTUC" Type="Self.TINTUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THELOAITIN">
+        <PropertyRef Name="IDLOAI" />
+      </Principal>
+      <Dependent Role="TINTUC">
+        <PropertyRef Name="IDLOAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ql_tintucEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TINTUCs" EntityType="Self.TINTUC" />
+    <EntitySet Name="THELOAITINs" EntityType="Self.THELOAITIN" />
+    <AssociationSet Name="FK_TINTUC_THELOAITIN" Association="Self.FK_TINTUC_THELOAITIN">
+      <End Role="THELOAITIN" EntitySet="THELOAITINs" />
+      <End Role="TINTUC" EntitySet="TINTUCs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ql_tintucModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TINTUC">
+    <Key>
+      <PropertyRef Name="IDTIN" />
+    </Key>
+    <Property Name="IDTIN" Type="int" Nullable="false" />
+    <Property Name="IDLOAI" Type="int" />
+    <Property Name="TIEUDETIN" Type="nvarchar" MaxLength="100" />
+    <Property Name="NOIDUNGTIN" Type="ntext" />
+  </EntityType>
+  <EntityType Name="THELOAITIN">
+    <Key>
+      <PropertyRef Name="IDLOAI" />
+    </Key>
+    <Property Name="IDLOAI" Type="int" Nullable="false" />
+    <Property Name="TENTHELOAI" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_TINTUC_THELOAITIN">
+    <End Role="THELOAITIN" Type="Self.THELOAITIN" Multiplicity="0..1" />
+    <End Role="TINTUC" Type="Self.TINTUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THELOAITIN">
+        <PropertyRef Name="IDLOAI" />
+      </Principal>
+      <Dependent Role="TINTUC">
+        <PropertyRef Name="IDLOAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ql_tintucModelStoreContainer">
+    <EntitySet Name="TINTUC" EntityType="Self.TINTUC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THELOAITIN" EntityType="Self.THELOAITIN" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TINTUC_THELOAITIN" Association="Self.FK_TINTUC_THELOAITIN">
+      <End Role="THELOAITIN" EntitySet="THELOAITIN" />
+      <End Role="TINTUC" EntitySet="TINTUC" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

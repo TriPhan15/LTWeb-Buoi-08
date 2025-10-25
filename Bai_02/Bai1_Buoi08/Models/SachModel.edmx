@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ql_hanghoaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="chitietdonhang">
+          <Key>
+            <PropertyRef Name="madonhang" />
+            <PropertyRef Name="masach" />
+          </Key>
+          <Property Name="madonhang" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="masach" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="dongia" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="chude">
+          <Key>
+            <PropertyRef Name="macd" />
+          </Key>
+          <Property Name="macd" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="tenchude" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="dondathang">
+          <Key>
+            <PropertyRef Name="madonhang" />
+          </Key>
+          <Property Name="madonhang" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="datthanhtoan" Type="nvarchar" MaxLength="50" />
+          <Property Name="tinhtrangdonhang" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaydat" Type="date" />
+          <Property Name="ngaygiao" Type="date" />
+          <Property Name="makh" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="khachhang">
+          <Key>
+            <PropertyRef Name="makh" />
+          </Key>
+          <Property Name="makh" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="hoten" Type="nvarchar" MaxLength="50" />
+          <Property Name="taikhoan" Type="nvarchar" MaxLength="50" />
+          <Property Name="matkhau" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="dienthoai" Type="nchar" MaxLength="13" />
+          <Property Name="ngaysinh" Type="date" />
+        </EntityType>
+        <EntityType Name="nhaxuatban">
+          <Key>
+            <PropertyRef Name="manxb" />
+          </Key>
+          <Property Name="manxb" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="tennxh" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="dienthoai" Type="nchar" MaxLength="13" />
+        </EntityType>
+        <EntityType Name="sach">
+          <Key>
+            <PropertyRef Name="masach" />
+          </Key>
+          <Property Name="masach" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="tensach" Type="nvarchar" MaxLength="50" />
+          <Property Name="giaban" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="mota" Type="nvarchar" MaxLength="50" />
+          <Property Name="anhbia" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaycapnhat" Type="date" />
+          <Property Name="soluongton" Type="int" />
+          <Property Name="macd" Type="char" MaxLength="10" />
+          <Property Name="manxb" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tacgia">
+          <Key>
+            <PropertyRef Name="matg" />
+          </Key>
+          <Property Name="matg" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="tentg" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="tieusu" Type="nvarchar" MaxLength="50" />
+          <Property Name="dienthoai" Type="nchar" MaxLength="13" />
+        </EntityType>
+        <EntityType Name="vietsach">
+          <Key>
+            <PropertyRef Name="matg" />
+            <PropertyRef Name="masach" />
+          </Key>
+          <Property Name="matg" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="masach" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="vaitro" Type="nvarchar" MaxLength="50" />
+          <Property Name="vitri" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="fk_chitietdonhang_dondathang">
+          <End Role="dondathang" Type="Self.dondathang" Multiplicity="1" />
+          <End Role="chitietdonhang" Type="Self.chitietdonhang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dondathang">
+              <PropertyRef Name="madonhang" />
+            </Principal>
+            <Dependent Role="chitietdonhang">
+              <PropertyRef Name="madonhang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_chitietdonhang_sach">
+          <End Role="sach" Type="Self.sach" Multiplicity="1" />
+          <End Role="chitietdonhang" Type="Self.chitietdonhang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sach">
+              <PropertyRef Name="masach" />
+            </Principal>
+            <Dependent Role="chitietdonhang">
+              <PropertyRef Name="masach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_dondathang_khachhang">
+          <End Role="khachhang" Type="Self.khachhang" Multiplicity="0..1" />
+          <End Role="dondathang" Type="Self.dondathang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="khachhang">
+              <PropertyRef Name="makh" />
+            </Principal>
+            <Dependent Role="dondathang">
+              <PropertyRef Name="makh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sach_chude">
+          <End Role="chude" Type="Self.chude" Multiplicity="0..1" />
+          <End Role="sach" Type="Self.sach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="chude">
+              <PropertyRef Name="macd" />
+            </Principal>
+            <Dependent Role="sach">
+              <PropertyRef Name="macd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sach_nxb">
+          <End Role="nhaxuatban" Type="Self.nhaxuatban" Multiplicity="0..1" />
+          <End Role="sach" Type="Self.sach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhaxuatban">
+              <PropertyRef Name="manxb" />
+            </Principal>
+            <Dependent Role="sach">
+              <PropertyRef Name="manxb" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_vietsach_sach">
+          <End Role="sach" Type="Self.sach" Multiplicity="1" />
+          <End Role="vietsach" Type="Self.vietsach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sach">
+              <PropertyRef Name="masach" />
+            </Principal>
+            <Dependent Role="vietsach">
+              <PropertyRef Name="masach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_vietsach_tacgia">
+          <End Role="tacgia" Type="Self.tacgia" Multiplicity="1" />
+          <End Role="vietsach" Type="Self.vietsach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tacgia">
+              <PropertyRef Name="matg" />
+            </Principal>
+            <Dependent Role="vietsach">
+              <PropertyRef Name="matg" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ql_hanghoaModelStoreContainer">
+          <EntitySet Name="chitietdonhang" EntityType="Self.chitietdonhang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="chude" EntityType="Self.chude" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dondathang" EntityType="Self.dondathang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="khachhang" EntityType="Self.khachhang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nhaxuatban" EntityType="Self.nhaxuatban" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sach" EntityType="Self.sach" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tacgia" EntityType="Self.tacgia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vietsach" EntityType="Self.vietsach" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_chitietdonhang_dondathang" Association="Self.fk_chitietdonhang_dondathang">
+            <End Role="dondathang" EntitySet="dondathang" />
+            <End Role="chitietdonhang" EntitySet="chitietdonhang" />
+          </AssociationSet>
+          <AssociationSet Name="fk_chitietdonhang_sach" Association="Self.fk_chitietdonhang_sach">
+            <End Role="sach" EntitySet="sach" />
+            <End Role="chitietdonhang" EntitySet="chitietdonhang" />
+          </AssociationSet>
+          <AssociationSet Name="fk_dondathang_khachhang" Association="Self.fk_dondathang_khachhang">
+            <End Role="khachhang" EntitySet="khachhang" />
+            <End Role="dondathang" EntitySet="dondathang" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sach_chude" Association="Self.fk_sach_chude">
+            <End Role="chude" EntitySet="chude" />
+            <End Role="sach" EntitySet="sach" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sach_nxb" Association="Self.fk_sach_nxb">
+            <End Role="nhaxuatban" EntitySet="nhaxuatban" />
+            <End Role="sach" EntitySet="sach" />
+          </AssociationSet>
+          <AssociationSet Name="fk_vietsach_sach" Association="Self.fk_vietsach_sach">
+            <End Role="sach" EntitySet="sach" />
+            <End Role="vietsach" EntitySet="vietsach" />
+          </AssociationSet>
+          <AssociationSet Name="fk_vietsach_tacgia" Association="Self.fk_vietsach_tacgia">
+            <End Role="tacgia" EntitySet="tacgia" />
+            <End Role="vietsach" EntitySet="vietsach" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ql_hanghoaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="chitietdonhang">
+          <Key>
+            <PropertyRef Name="madonhang" />
+            <PropertyRef Name="masach" />
+          </Key>
+          <Property Name="madonhang" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="masach" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="dongia" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="dondathang" Relationship="Self.fk_chitietdonhang_dondathang" FromRole="chitietdonhang" ToRole="dondathang" />
+          <NavigationProperty Name="sach" Relationship="Self.fk_chitietdonhang_sach" FromRole="chitietdonhang" ToRole="sach" />
+        </EntityType>
+        <EntityType Name="chude">
+          <Key>
+            <PropertyRef Name="macd" />
+          </Key>
+          <Property Name="macd" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tenchude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="saches" Relationship="Self.fk_sach_chude" FromRole="chude" ToRole="sach" />
+        </EntityType>
+        <EntityType Name="dondathang">
+          <Key>
+            <PropertyRef Name="madonhang" />
+          </Key>
+          <Property Name="madonhang" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="datthanhtoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tinhtrangdonhang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaydat" Type="DateTime" Precision="0" />
+          <Property Name="ngaygiao" Type="DateTime" Precision="0" />
+          <Property Name="makh" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="chitietdonhangs" Relationship="Self.fk_chitietdonhang_dondathang" FromRole="dondathang" ToRole="chitietdonhang" />
+          <NavigationProperty Name="khachhang" Relationship="Self.fk_dondathang_khachhang" FromRole="dondathang" ToRole="khachhang" />
+        </EntityType>
+        <EntityType Name="khachhang">
+          <Key>
+            <PropertyRef Name="makh" />
+          </Key>
+          <Property Name="makh" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="hoten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="taikhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="matkhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dienthoai" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="ngaysinh" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="dondathangs" Relationship="Self.fk_dondathang_khachhang" FromRole="khachhang" ToRole="dondathang" />
+        </EntityType>
+        <EntityType Name="nhaxuatban">
+          <Key>
+            <PropertyRef Name="manxb" />
+          </Key>
+          <Property Name="manxb" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tennxh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dienthoai" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="saches" Relationship="Self.fk_sach_nxb" FromRole="nhaxuatban" ToRole="sach" />
+        </EntityType>
+        <EntityType Name="sach">
+          <Key>
+            <PropertyRef Name="masach" />
+          </Key>
+          <Property Name="masach" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tensach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="giaban" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="mota" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="anhbia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaycapnhat" Type="DateTime" Precision="0" />
+          <Property Name="soluongton" Type="Int32" />
+          <Property Name="macd" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="manxb" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="chitietdonhangs" Relationship="Self.fk_chitietdonhang_sach" FromRole="sach" ToRole="chitietdonhang" />
+          <NavigationProperty Name="chude" Relationship="Self.fk_sach_chude" FromRole="sach" ToRole="chude" />
+          <NavigationProperty Name="nhaxuatban" Relationship="Self.fk_sach_nxb" FromRole="sach" ToRole="nhaxuatban" />
+          <NavigationProperty Name="vietsaches" Relationship="Self.fk_vietsach_sach" FromRole="sach" ToRole="vietsach" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tacgia">
+          <Key>
+            <PropertyRef Name="matg" />
+          </Key>
+          <Property Name="matg" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tentg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tieusu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dienthoai" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="vietsaches" Relationship="Self.fk_vietsach_tacgia" FromRole="tacgia" ToRole="vietsach" />
+        </EntityType>
+        <EntityType Name="vietsach">
+          <Key>
+            <PropertyRef Name="matg" />
+            <PropertyRef Name="masach" />
+          </Key>
+          <Property Name="matg" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="masach" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="vaitro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vitri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="sach" Relationship="Self.fk_vietsach_sach" FromRole="vietsach" ToRole="sach" />
+          <NavigationProperty Name="tacgia" Relationship="Self.fk_vietsach_tacgia" FromRole="vietsach" ToRole="tacgia" />
+        </EntityType>
+        <Association Name="fk_chitietdonhang_dondathang">
+          <End Role="dondathang" Type="Self.dondathang" Multiplicity="1" />
+          <End Role="chitietdonhang" Type="Self.chitietdonhang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dondathang">
+              <PropertyRef Name="madonhang" />
+            </Principal>
+            <Dependent Role="chitietdonhang">
+              <PropertyRef Name="madonhang" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_chitietdonhang_sach">
+          <End Role="sach" Type="Self.sach" Multiplicity="1" />
+          <End Role="chitietdonhang" Type="Self.chitietdonhang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sach">
+              <PropertyRef Name="masach" />
+            </Principal>
+            <Dependent Role="chitietdonhang">
+              <PropertyRef Name="masach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sach_chude">
+          <End Role="chude" Type="Self.chude" Multiplicity="0..1" />
+          <End Role="sach" Type="Self.sach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="chude">
+              <PropertyRef Name="macd" />
+            </Principal>
+            <Dependent Role="sach">
+              <PropertyRef Name="macd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_dondathang_khachhang">
+          <End Role="khachhang" Type="Self.khachhang" Multiplicity="0..1" />
+          <End Role="dondathang" Type="Self.dondathang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="khachhang">
+              <PropertyRef Name="makh" />
+            </Principal>
+            <Dependent Role="dondathang">
+              <PropertyRef Name="makh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_sach_nxb">
+          <End Role="nhaxuatban" Type="Self.nhaxuatban" Multiplicity="0..1" />
+          <End Role="sach" Type="Self.sach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhaxuatban">
+              <PropertyRef Name="manxb" />
+            </Principal>
+            <Dependent Role="sach">
+              <PropertyRef Name="manxb" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_vietsach_sach">
+          <End Role="sach" Type="Self.sach" Multiplicity="1" />
+          <End Role="vietsach" Type="Self.vietsach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sach">
+              <PropertyRef Name="masach" />
+            </Principal>
+            <Dependent Role="vietsach">
+              <PropertyRef Name="masach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_vietsach_tacgia">
+          <End Role="tacgia" Type="Self.tacgia" Multiplicity="1" />
+          <End Role="vietsach" Type="Self.vietsach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tacgia">
+              <PropertyRef Name="matg" />
+            </Principal>
+            <Dependent Role="vietsach">
+              <PropertyRef Name="matg" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ql_hanghoaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="chitietdonhangs" EntityType="Self.chitietdonhang" />
+          <EntitySet Name="chudes" EntityType="Self.chude" />
+          <EntitySet Name="dondathangs" EntityType="Self.dondathang" />
+          <EntitySet Name="khachhangs" EntityType="Self.khachhang" />
+          <EntitySet Name="nhaxuatbans" EntityType="Self.nhaxuatban" />
+          <EntitySet Name="saches" EntityType="Self.sach" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="tacgias" EntityType="Self.tacgia" />
+          <EntitySet Name="vietsaches" EntityType="Self.vietsach" />
+          <AssociationSet Name="fk_chitietdonhang_dondathang" Association="Self.fk_chitietdonhang_dondathang">
+            <End Role="dondathang" EntitySet="dondathangs" />
+            <End Role="chitietdonhang" EntitySet="chitietdonhangs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_chitietdonhang_sach" Association="Self.fk_chitietdonhang_sach">
+            <End Role="sach" EntitySet="saches" />
+            <End Role="chitietdonhang" EntitySet="chitietdonhangs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sach_chude" Association="Self.fk_sach_chude">
+            <End Role="chude" EntitySet="chudes" />
+            <End Role="sach" EntitySet="saches" />
+          </AssociationSet>
+          <AssociationSet Name="fk_dondathang_khachhang" Association="Self.fk_dondathang_khachhang">
+            <End Role="khachhang" EntitySet="khachhangs" />
+            <End Role="dondathang" EntitySet="dondathangs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_sach_nxb" Association="Self.fk_sach_nxb">
+            <End Role="nhaxuatban" EntitySet="nhaxuatbans" />
+            <End Role="sach" EntitySet="saches" />
+          </AssociationSet>
+          <AssociationSet Name="fk_vietsach_sach" Association="Self.fk_vietsach_sach">
+            <End Role="sach" EntitySet="saches" />
+            <End Role="vietsach" EntitySet="vietsaches" />
+          </AssociationSet>
+          <AssociationSet Name="fk_vietsach_tacgia" Association="Self.fk_vietsach_tacgia">
+            <End Role="tacgia" EntitySet="tacgias" />
+            <End Role="vietsach" EntitySet="vietsaches" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ql_hanghoaModelStoreContainer" CdmEntityContainer="ql_hanghoaEntities">
+          <EntitySetMapping Name="chitietdonhangs">
+            <EntityTypeMapping TypeName="ql_hanghoaModel.chitietdonhang">
+              <MappingFragment StoreEntitySet="chitietdonhang">
+                <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+                <ScalarProperty Name="masach" ColumnName="masach" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="chudes">
+            <EntityTypeMapping TypeName="ql_hanghoaModel.chude">
+              <MappingFragment StoreEntitySet="chude">
+                <ScalarProperty Name="macd" ColumnName="macd" />
+                <ScalarProperty Name="tenchude" ColumnName="tenchude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dondathangs">
+            <EntityTypeMapping TypeName="ql_hanghoaModel.dondathang">
+              <MappingFragment StoreEntitySet="dondathang">
+                <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+                <ScalarProperty Name="datthanhtoan" ColumnName="datthanhtoan" />
+                <ScalarProperty Name="tinhtrangdonhang" ColumnName="tinhtrangdonhang" />
+                <ScalarProperty Name="ngaydat" ColumnName="ngaydat" />
+                <ScalarProperty Name="ngaygiao" ColumnName="ngaygiao" />
+                <ScalarProperty Name="makh" ColumnName="makh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="khachhangs">
+            <EntityTypeMapping TypeName="ql_hanghoaModel.khachhang">
+              <MappingFragment StoreEntitySet="khachhang">
+                <ScalarProperty Name="makh" ColumnName="makh" />
+                <ScalarProperty Name="hoten" ColumnName="hoten" />
+                <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
+                <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nhaxuatbans">
+            <EntityTypeMapping TypeName="ql_hanghoaModel.nhaxuatban">
+              <MappingFragment StoreEntitySet="nhaxuatban">
+                <ScalarProperty Name="manxb" ColumnName="manxb" />
+                <ScalarProperty Name="tennxh" ColumnName="tennxh" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="saches">
+            <EntityTypeMapping TypeName="ql_hanghoaModel.sach">
+              <MappingFragment StoreEntitySet="sach">
+                <ScalarProperty Name="masach" ColumnName="masach" />
+                <ScalarProperty Name="tensach" ColumnName="tensach" />
+                <ScalarProperty Name="giaban" ColumnName="giaban" />
+                <ScalarProperty Name="mota" ColumnName="mota" />
+                <ScalarProperty Name="anhbia" ColumnName="anhbia" />
+                <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+                <ScalarProperty Name="soluongton" ColumnName="soluongton" />
+                <ScalarProperty Name="macd" ColumnName="macd" />
+                <ScalarProperty Name="manxb" ColumnName="manxb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ql_hanghoaModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tacgias">
+            <EntityTypeMapping TypeName="ql_hanghoaModel.tacgia">
+              <MappingFragment StoreEntitySet="tacgia">
+                <ScalarProperty Name="matg" ColumnName="matg" />
+                <ScalarProperty Name="tentg" ColumnName="tentg" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="tieusu" ColumnName="tieusu" />
+                <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vietsaches">
+            <EntityTypeMapping TypeName="ql_hanghoaModel.vietsach">
+              <MappingFragment StoreEntitySet="vietsach">
+                <ScalarProperty Name="matg" ColumnName="matg" />
+                <ScalarProperty Name="masach" ColumnName="masach" />
+                <ScalarProperty Name="vaitro" ColumnName="vaitro" />
+                <ScalarProperty Name="vitri" ColumnName="vitri" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

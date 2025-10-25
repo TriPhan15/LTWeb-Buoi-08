@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ql_hanghoaModelStoreContainer" CdmEntityContainer="ql_hanghoaEntities">
+    <EntitySetMapping Name="chitietdonhangs">
+      <EntityTypeMapping TypeName="ql_hanghoaModel.chitietdonhang">
+        <MappingFragment StoreEntitySet="chitietdonhang">
+          <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+          <ScalarProperty Name="masach" ColumnName="masach" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chudes">
+      <EntityTypeMapping TypeName="ql_hanghoaModel.chude">
+        <MappingFragment StoreEntitySet="chude">
+          <ScalarProperty Name="macd" ColumnName="macd" />
+          <ScalarProperty Name="tenchude" ColumnName="tenchude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dondathangs">
+      <EntityTypeMapping TypeName="ql_hanghoaModel.dondathang">
+        <MappingFragment StoreEntitySet="dondathang">
+          <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+          <ScalarProperty Name="datthanhtoan" ColumnName="datthanhtoan" />
+          <ScalarProperty Name="tinhtrangdonhang" ColumnName="tinhtrangdonhang" />
+          <ScalarProperty Name="ngaydat" ColumnName="ngaydat" />
+          <ScalarProperty Name="ngaygiao" ColumnName="ngaygiao" />
+          <ScalarProperty Name="makh" ColumnName="makh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="khachhangs">
+      <EntityTypeMapping TypeName="ql_hanghoaModel.khachhang">
+        <MappingFragment StoreEntitySet="khachhang">
+          <ScalarProperty Name="makh" ColumnName="makh" />
+          <ScalarProperty Name="hoten" ColumnName="hoten" />
+          <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+          <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nhaxuatbans">
+      <EntityTypeMapping TypeName="ql_hanghoaModel.nhaxuatban">
+        <MappingFragment StoreEntitySet="nhaxuatban">
+          <ScalarProperty Name="manxb" ColumnName="manxb" />
+          <ScalarProperty Name="tennxh" ColumnName="tennxh" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="saches">
+      <EntityTypeMapping TypeName="ql_hanghoaModel.sach">
+        <MappingFragment StoreEntitySet="sach">
+          <ScalarProperty Name="masach" ColumnName="masach" />
+          <ScalarProperty Name="tensach" ColumnName="tensach" />
+          <ScalarProperty Name="giaban" ColumnName="giaban" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="anhbia" ColumnName="anhbia" />
+          <ScalarProperty Name="ngaycapnhat" ColumnName="ngaycapnhat" />
+          <ScalarProperty Name="soluongton" ColumnName="soluongton" />
+          <ScalarProperty Name="macd" ColumnName="macd" />
+          <ScalarProperty Name="manxb" ColumnName="manxb" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ql_hanghoaModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tacgias">
+      <EntityTypeMapping TypeName="ql_hanghoaModel.tacgia">
+        <MappingFragment StoreEntitySet="tacgia">
+          <ScalarProperty Name="matg" ColumnName="matg" />
+          <ScalarProperty Name="tentg" ColumnName="tentg" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="tieusu" ColumnName="tieusu" />
+          <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vietsaches">
+      <EntityTypeMapping TypeName="ql_hanghoaModel.vietsach">
+        <MappingFragment StoreEntitySet="vietsach">
+          <ScalarProperty Name="matg" ColumnName="matg" />
+          <ScalarProperty Name="masach" ColumnName="masach" />
+          <ScalarProperty Name="vaitro" ColumnName="vaitro" />
+          <ScalarProperty Name="vitri" ColumnName="vitri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

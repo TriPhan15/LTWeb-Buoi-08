@@ -1,0 +1,28 @@
+﻿@model MvcApplication1.Models.THELOAITIN
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>THELOAITIN</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IDLOAI)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IDLOAI)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TENTHELOAI)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TENTHELOAI)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index

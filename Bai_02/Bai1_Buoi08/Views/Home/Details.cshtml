@@ -1,0 +1,48 @@
+﻿@model Bai1_Buoi08.Models.sach
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>sach</legend>
+    <div>
+        <b>Tên sách:</b>     @Html.DisplayFor(model => model.tensach)
+    </div>
+    <div>
+        <b>Giá bán:</b>@String.Format("{0:0,0}", Model.giaban) VND
+
+    </div>
+
+    <div class="display-label">
+       <b>Mô tả: </b>  
+        @Html.DisplayFor(model => model.mota)
+    </div>
+    <div class="display-label">
+      <b>Ảnh bìa:</b>  
+         <img src="@Url.Content("~/Hinh/"+Model.anhbia)" width="120px" />
+    </div>
+    <div class="display-label">
+     <b>Ngày cập nhật:</b> 
+        @String.Format("{0:dd/MM/yyyy}", Model.ngaycapnhat)
+    </div>
+
+    <div class="display-label">
+       <b>Số lượng tồn:</b> 
+        @Html.DisplayFor(model => model.soluongton)
+    </div>
+    <div class="display-label">
+        <b>Chủ đề:</b>
+        @Html.DisplayFor(model => model.chude.tenchude)
+    </div>
+    <div class="display-label">
+       <b>Nhà xuất bản:</b> 
+        @Html.DisplayFor(model => model.nhaxuatban.tennxh)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.masach }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

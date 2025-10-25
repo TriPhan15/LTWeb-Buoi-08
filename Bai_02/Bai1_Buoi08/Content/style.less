@@ -1,0 +1,61 @@
+﻿
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        table-layout: fixed;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        text-align: left;
+        vertical-align: middle;
+        word-wrap: break-word;
+    }
+
+    th {
+        background-color: #007BFF;
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #e6f2ff;
+        cursor: pointer;
+    }
+
+    /* Ảnh trong bảng */
+    td img {
+        max-width: 80px;
+        max-height: 80px;
+        border-radius: 4px;
+        object-fit: cover;
+        display: block;
+        margin: auto;
+    }
+
+    /* Giới hạn chiều rộng cột mô tả */
+    td:nth-child(4) {
+        max-width: 250px;
+    }
+
+    /* Link trong cột hành động */
+    td:last-child a {
+        color: #007BFF;
+        text-decoration: none;
+        margin-right: 8px;
+        font-weight: 500;
+    }
+
+    td:last-child a:hover {
+        text-decoration: underline;
+    }
+

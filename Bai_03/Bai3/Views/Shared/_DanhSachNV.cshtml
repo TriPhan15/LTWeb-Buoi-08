@@ -1,0 +1,22 @@
+﻿@model List<Bai3.Models.tbl_Employee>
+
+<h4>Danh sách nhân viên</h4>
+<table class="table " >
+    <tr>
+        <th>Tên nhân viên</th>
+        <th>Thành Phố</th>
+        <th>Giới tính</th>
+    </tr>
+    @foreach (var nv in Model)
+    {
+        <tr>
+            <td>@nv.Name</td>
+            <td>@nv.City</td>
+            <td>@nv.Gender</td>
+            <td>
+                @Html.ActionLink("Detail","Details", new { id = nv.Id })
+            </td>
+        </tr>
+    }
+
+</table>

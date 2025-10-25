@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="58126aedd6a34cb78492bb055095e66f" Name="Diagram1">
+        <EntityTypeShape EntityType="ql_hanghoaModel.chitietdonhang" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ql_hanghoaModel.chude" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ql_hanghoaModel.dondathang" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ql_hanghoaModel.khachhang" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ql_hanghoaModel.nhaxuatban" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ql_hanghoaModel.sach" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ql_hanghoaModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ql_hanghoaModel.tacgia" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ql_hanghoaModel.vietsach" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ql_hanghoaModel.fk_chitietdonhang_dondathang" ManuallyRouted="false" />
+        <AssociationConnector Association="ql_hanghoaModel.fk_chitietdonhang_sach" ManuallyRouted="false" />
+        <AssociationConnector Association="ql_hanghoaModel.fk_sach_chude" ManuallyRouted="false" />
+        <AssociationConnector Association="ql_hanghoaModel.fk_dondathang_khachhang" ManuallyRouted="false" />
+        <AssociationConnector Association="ql_hanghoaModel.fk_sach_nxb" ManuallyRouted="false" />
+        <AssociationConnector Association="ql_hanghoaModel.fk_vietsach_sach" ManuallyRouted="false" />
+        <AssociationConnector Association="ql_hanghoaModel.fk_vietsach_tacgia" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

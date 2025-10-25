@@ -1,0 +1,26 @@
+﻿@model LTWeb08_Tuan08.Models.theloaitin
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>theloaitin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tentheloai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tentheloai)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edits", new { id = Model.IDLoai }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

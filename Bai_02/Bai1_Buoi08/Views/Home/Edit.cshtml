@@ -1,0 +1,94 @@
+﻿@model Bai1_Buoi08.Models.sach
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>sach</legend>
+
+        <div class="editor-label">
+            <b>Mã sách:</b> 
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.masach)
+            @Html.ValidationMessageFor(model => model.masach)
+        </div>
+
+        <div class="editor-label">
+            <b>Tên sách:</b> 
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.tensach)
+            @Html.ValidationMessageFor(model => model.tensach)
+        </div>
+
+        <div class="editor-label">
+            <b>Giá bán:</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.giaban)
+            @Html.ValidationMessageFor(model => model.giaban)
+        </div>
+
+        <div class="form-group">
+            <b>Mô tả: </b>  
+            <div class="col-md-10">
+                <textarea name="mota" placeholder="@Model.mota"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b>Ảnh bìa:</b>  
+            <div class="col-md-10">
+              Chọn ảnh mới
+            </div>
+            <input type="file" name="fileupload" />
+            <img src="@Url.Content("~/Hinh/"+@Model.anhbia)" width="120px" /> (Ảnh hiện tại)
+            @ViewBag.tb
+        </div>
+
+        <div class="editor-label">
+            <b>Ngày cập nhật:</b> 
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ngaycapnhat)
+            @Html.ValidationMessageFor(model => model.ngaycapnhat)
+        </div>
+
+        <div class="editor-label">
+            <b>Số lượng tồn:</b> 
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.soluongton)
+            @Html.ValidationMessageFor(model => model.soluongton)
+        </div>
+        <div class="form-group">
+            <b>Chủ đề:</b>
+            <div class="col-md-10">
+                @Html.DropDownList("macd")
+            </div>
+        </div>
+        <div class="form-group">
+            <b>Nhà xuất bản:</b> 
+            <div class="col-md-10">
+                @Html.DropDownList("manxb")
+            </div>
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

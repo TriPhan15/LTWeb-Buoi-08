@@ -1,0 +1,65 @@
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Bai1_Buoi08.dll.config
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Bai1_Buoi08.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Bai1_Buoi08.pdb
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\EntityFramework.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\EntityFramework.SqlServer.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Microsoft.Web.Infrastructure.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Newtonsoft.Json.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\PagedList.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\PagedList.Mvc.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Net.Http.Formatting.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Helpers.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Http.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Http.WebHost.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Mvc.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Razor.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.WebPages.Deployment.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.WebPages.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.WebPages.Razor.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\EntityFramework.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\EntityFramework.SqlServer.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\PagedList.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\PagedList.Mvc.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Newtonsoft.Json.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Net.Http.Formatting.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Helpers.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Http.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Http.WebHost.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Mvc.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Razor.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.WebPages.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.WebPages.Deployment.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.WebPages.Razor.xml
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\obj\Debug\Bai1_Buoi08.dll
+D:\1LuuDuLieuSV\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\obj\Debug\Bai1_Buoi08.pdb
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Bai1_Buoi08.dll.config
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Bai1_Buoi08.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Bai1_Buoi08.pdb
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\EntityFramework.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\EntityFramework.SqlServer.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Newtonsoft.Json.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\PagedList.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\PagedList.Mvc.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Helpers.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Mvc.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Razor.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.WebPages.Deployment.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.WebPages.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.WebPages.Razor.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\EntityFramework.xml
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\EntityFramework.SqlServer.xml
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\PagedList.xml
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\PagedList.Mvc.xml
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\Newtonsoft.Json.xml
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Helpers.xml
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Mvc.xml
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.Razor.xml
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.WebPages.xml
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.WebPages.Deployment.xml
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\bin\System.Web.WebPages.Razor.xml
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\obj\Debug\Bai1_Buoi08.csprojResolveAssemblyReference.cache
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\obj\Debug\Bai1_Buoi08.dll
+C:\Users\PTTRI\Downloads\2001230977-PhanThanhTrí-Buổi-08 (1)\2001230977-PhanThanhTrí-Buổi-08\Bai1_Buoi08\Bai1_Buoi08\obj\Debug\Bai1_Buoi08.pdb

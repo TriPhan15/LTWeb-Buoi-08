@@ -1,0 +1,164 @@
+﻿@model IEnumerable<Bai1_Buoi08.Models.sach>
+@using Bai1_Buoi08.Models;
+@*@using PagedList.MVC
+@model PagedList.PagedList<Bai1_Buoi08.Models.sach>*@
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        table-layout: fixed;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        text-align: left;
+        vertical-align: middle;
+        word-wrap: break-word;
+    }
+
+    th {
+        background-color: #007BFF;
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #e6f2ff;
+        cursor: pointer;
+    }
+
+    /* Ảnh trong bảng */
+    td img {
+        max-width: 80px;
+        max-height: 80px;
+        border-radius: 4px;
+        object-fit: cover;
+        display: block;
+        margin: auto;
+    }
+
+    /* Giới hạn chiều rộng cột mô tả */
+    td:nth-child(4) {
+        max-width: 250px;
+    }
+
+    /* Link trong cột hành động */
+    td:last-child a {
+        color: #007BFF;
+        text-decoration: none;
+        margin-right: 8px;
+        font-weight: 500;
+    }
+
+        td:last-child a:hover {
+            text-decoration: underline;
+        }
+</style>
+
+
+@helper Truncate(string input, int lenght)
+{
+    if (input.Length < lenght)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, lenght)
+    }
+
+}
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table style="border:1px solid black">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.masach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tensach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.giaban)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mota)
+        </th>
+        <th >
+            <div style="width:50%;height:50%">
+                @Html.DisplayNameFor(model => model.anhbia)
+            </div>
+         
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngaycapnhat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soluongton)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.macd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.manxb)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.masach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tensach)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.giaban)
+        </td>
+        <td>
+            @Truncate(item.mota,100)
+        </td>
+        <td >
+            <div class="card" style="height:50%;width:50%">
+                <img src="~/Hinh/@Url.Content(item.anhbia)" width="50%" height="50%"  />
+            </div>
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngaycapnhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soluongton)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.chude.tenchude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nhaxuatban.tennxh)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.masach  }) |
+            @Html.ActionLink("Details", "Details", new { id = item.masach }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.masach })
+        </td>
+    </tr>
+}
+
+</table>
